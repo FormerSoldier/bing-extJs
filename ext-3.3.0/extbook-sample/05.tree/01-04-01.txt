@@ -1,4 +1,0 @@
-[
-        {text:'not leaf'},
-        {text:'is leaf',leaf:true}
-]
