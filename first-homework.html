@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel = "stylesheet" type = "text/css" href="./ext-3.3.0/resources/css/ext-all.css">
+        <script type = "text/javascript" src = "./ext-3.3.0/adapter/ext/ext-base.js"></script>
+        <script type = "text/javascript" src = "./ext-3.3.0/ext-all.js"></script>
+
+        <style type="text/css">
+
+        </style>
+    </head>
+
+    <body>
+        <script type = "text/javascript">
+            
+            Ext.onReady(function(){
+                
+                var viewport = new Ext.Viewport({
+                    style: 'background: url(pic/bg.jpg) no-repeat;width:100%;height:100%',
+                    items:pageDiv
+                });
+
+                var searchIcon = new Ext.BoxComponent({
+                    id: 'search',
+                    height: 40,
+                    width: 40,
+                    xtype: 'box',
+                    style: 'background: url(pic/pic.png) no-repeat -160px -62px; margin-top:30px;margin-left:-48px;'
+                });       
+
+                var typeTabs = new Ext.TabPanel({
+                    activeTab: 0,
+                    plain: true,
+                    border:false,
+                    width: 500,
+                    items: [{
+                        id: '1',
+                        xtype:'textfield',
+                        title: '国内版',
+                        height: 40,
+                        style:'background-color:#fff'
+                    },{
+                        id: '2',
+                        xtype:'textfield',
+                        title: '国际版',
+                        height: 40
+                    }]
+                });
+                var bingLogo = new Ext.BoxComponent({
+                    xtype: 'box',
+                    width: 180,
+                    height: 79,
+                    style: 'background:url(pic/pic.png) no-repeat 28px 13px; display:inline-block'
+                });
+                var pageDiv = new Ext.Container({
+                    el: 'test',
+                    style:"border:1px solid red;",
+                    width:800,
+                    layout:'column',
+                    style: 'position:absolute;top:120px;left:80px;',
+                    items: [bingLogo,typeTabs,searchIcon]
+                });
+
+                pageDiv.render();
+            });
+        </script>
+        <div id = "test">
+        </div>
+    </body>
+</html>
